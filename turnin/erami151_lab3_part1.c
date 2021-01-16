@@ -1,6 +1,6 @@
 /*	Author: Estela Ramirez Ramirez
  *  Partner(s) Name: 
- *	Lab Section: 21
+ *	Lab Section: 22
  *	Assignment: Lab #3  Exercise #1
  *	Exercise Description: Outputs how many numbers of 1 on ports A and B.
  *
