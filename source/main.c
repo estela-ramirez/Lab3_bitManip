@@ -37,8 +37,8 @@ int main(void) {
         }else{
             tmpC = tmpC;
         }
-        if (tmpA < 4){
-            tmpC = tmpC | 0x40;
+        if (tmpA <= 4){
+            tmpC = tmpC | 0x40;  //01000000
         }  // going here even if tmpA is not less than 4
         PORTC = tmpC;
     }
