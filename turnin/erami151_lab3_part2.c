@@ -22,7 +22,7 @@ int main(void) {
     while (1) {
 
         tmpA = PINA & 0x0F;
-       
+        if (tmpA == 0x00){ tmpC = tmpC | 0x40;}
         if (tmpA == 0x01 || tmpA == 0x02){
             tmpC =  0x20;
         }else if ( tmpA ==  0x03 || tmpA == 0x04){ 
@@ -39,10 +39,8 @@ int main(void) {
             tmpC = 0x00;
         }
         if (tmpA <= 4){
-            tmpC = tmpC | 0x60;  //01000000
+            tmpC = tmpC | 0x40;  //01000000
         }  // going here even if tmpA is not less than 4
-
-        
         PORTC = tmpC;
     }
     return 1;
