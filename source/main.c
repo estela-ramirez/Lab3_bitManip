@@ -22,22 +22,24 @@ int main(void) {
     while (1) {
 
         tmpA = PINA & 0x0F;
-        (tmpC ?  ( tmpA < 4 | 0x80  :  0x00 );
-
-        if ( tmpA ==  3 || tmpA == 4){ 
-            tmpC = tmpC | 0x030;    //00110000
+       
+        if ( tmpA ==  3 && tmpA == 4){ 
+            tmpC = tmpC | 0x30;    //00110000
             
-        }else if ( tmpA == 5 || tmpA == 6){
+        }else if ( tmpA == 5 && tmpA == 6){
             tmpC = tmpC | 0x38;    //00111000
-        }else if ( tmpA >= 7 || tmpA <= 9){
+        }else if ( tmpA >= 7 && tmpA <= 9){
             tmpC = tmpC | 0x3C; //00111100
-        }else if (tmpA >= 10 || tmpA <= 12){
+        }else if (tmpA >= 10 && tmpA <= 12){
             tmpC = tmpC | 0x3E;  // 00111110
-        }else if (tmpA >= 13 || tmpA <= 15){
+        }else if (tmpA >= 13 && tmpA <= 15){
             tmpC = tmpC | 0x3F;  //00111111
         }else{
             tmpC = tmpC;
         }
+        if (tmpA < 4){
+            tmpC = tmpC | 0x40;
+        }  // going here even if tmpA is not less than 4
         PORTC = tmpC;
     }
     return 1;
