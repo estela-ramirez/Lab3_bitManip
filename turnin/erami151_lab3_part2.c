@@ -23,7 +23,7 @@ int main(void) {
 
         tmpA = PINA & 0x0F;
         if (tmpA == 0x00){ tmpC = tmpC | 0x40;}
-        if (tmpA == 0x01 || tmpA == 0x02){
+        else if (tmpA == 0x01 || tmpA == 0x02){
             tmpC =  0x20;
         }else if ( tmpA ==  0x03 || tmpA == 0x04){ 
             tmpC = 0x30;    //00110000
